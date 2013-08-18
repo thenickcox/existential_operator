@@ -106,4 +106,14 @@ configure :build do
   
   # Or use a different image path
   # set :http_path, "/Content/images/"
+
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket                = 'speakeasy_blog.s3-website-us-east-1.amazonaws.com'
+    s3_sync.region                = 'us-easy-1'     # The AWS region for your bucket.
+    s3_sync.aws_access_key_id     = ENV['AWS_ACCESS_KEY']
+    s3_sync.aws_secret_access_key = ENV['AWS_SECRET_KEY']
+    s3_sync.delete                = false
+    s3_sync.after_build           = false
+    s3_sync.prefer_gzip           = true
+  end
 end

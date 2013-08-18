@@ -1,6 +1,6 @@
 ---
-title: getting-started
-date: 2013-08-18 04:39 UTC
+title: Getting Started
+date: 2013-08-17 04:39 UTC
 tags: chinese, chineasy
 ---
 

@@ -1,12 +1,12 @@
 ---
-title: crouching-tiger-hidden-dragon
+title: Crouching Tiger Hidden Dragon
 date: 2013-08-18 05:32 UTC
 tags: calligraphy, characters
 ---
 
 Tonight, my wife and I watched Ang Lee’s exquisite [Crouching Tiger, Hidden Dragon](http://www.imdb.com/title/tt0190332/?ref_=sr_1). We had both seen it before, but we had both loved the beauty of the physics defying martial arts, so we decided to watch it again.
 
-I had forgotten how frequently the movie drew the common parallel between calligraphy and swordplay, a theme explored in Jet Li’s (Hero)[http://www.imdb.com/title/tt0299977/?ref_=sr_4], another exciting, yet gorgeous film.
+I had forgotten how frequently the movie drew the common parallel between calligraphy and swordplay, a theme explored in Jet Li’s [Hero](http://www.imdb.com/title/tt0299977/?ref_=sr_4), another exciting, yet gorgeous film.
 
 I was excited when, at the end, I recognized the characters in Ang Lee’s name. READMORE It is shown below.
 

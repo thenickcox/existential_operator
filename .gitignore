@@ -9,6 +9,8 @@
 *.swo
 .*.swp
 
+.env
+
 # Ignore bundler config
 /.bundle
 
