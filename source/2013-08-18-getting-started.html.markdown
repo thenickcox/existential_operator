@@ -4,9 +4,7 @@ date: 2013-08-18 04:39 UTC
 tags: chinese, chineasy
 ---
 
-After I initially became fluent in French, I had wondered at the possibility of learning a second foreign language. I was relatively competent in Spanish, but I thought of a new conquest. There were many that I wanted to learn; in fact, I can't think of a single human language that I wouldn't want to learn. But though I'd thought of learning Chinese, it always seemed too difficult.
-
-READMORE
+After I initially became fluent in French, I had wondered at the possibility of learning a second foreign language. I was relatively competent in Spanish, but I thought of a new conquest. There were many that I wanted to learn; in fact, I can't think of a single human language that I wouldn't want to learn. But though I'd thought of learning Chinese, it always seemed too difficult. READMORE
 
 The other day on Twitter, someone shared a link to a [Kickstarter](http://www.kickstarter.com/projects/shaolanchineasy/chineasy-begins-0) campaign for [Chineasy](http://chineasy.org), the start-up of ShaoLan Hsueh. ShaoLan has designed a beautiful system for mnemonically learning and recalling Chinese characters based on simple, lovely illustrations.
 
