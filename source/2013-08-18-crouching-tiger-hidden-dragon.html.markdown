@@ -1,6 +1,7 @@
 ---
 title: Crouching Tiger Hidden Dragon
 date: 2013-08-18 05:32 UTC
+layout: post
 tags: calligraphy, characters
 ---
 
