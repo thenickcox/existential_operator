@@ -236,7 +236,7 @@ table
 // ========================================================= 
 
 $lt_gray_hex: #fff7f9
-$lt_gray_rgb: rgb(255, 246, 248)
+$lt_gray_rgb: rgb(249, 246, 247)
 $red: #cc3333
 $lt_gray_text: #646464
 
@@ -260,6 +260,7 @@ body
     font-size: 19px
     line-height: 1.5em
   @media all and (max-width: 401px)
+    overflow-x: hidden
     font-size: 17px
     line-height: 1.5em
 
@@ -290,37 +291,6 @@ a:hover
     float: left
     a, a:link
       border-bottom: none
-  nav
-    float: right
-    &.big-nav
-      @media all and (max-width: 600px)
-        display: none
-    ul
-      text-align: right
-      margin: 0
-      padding: 4px 0
-      li
-        display: inline
-        float: left
-        margin-left: 1.5em
-        @media all and (max-width: 768px)
-          margin-left: 0.8em
-        @media all and (max-width: 650px)
-          margin-left: 0.8em
-          font-size: 0.8em
-        text-transform: uppercase
-        a, a:link
-          text-decoration: none
-          font-size: 15px
-          font-family: $sans_fonts
-          border-bottom: none 
-          padding-left: 15px
-        a:hover
-          padding-left: 0
-          color: $red - 35
-          &:before
-            content: "\2605 "
-            padding-left: 0
 
 .container
   margin: 20px
@@ -347,6 +317,198 @@ footer
   padding: 2em 0
   background: $lt_gray_hex
   background: $lt_gray_rgb
+
+// ========================================================= 
+
+// @Navigation
+
+// ========================================================= 
+
+/*
+ * Navigataur: A pure CSS responsive navigation menu
+ * Author: Mike King (@micjamking)
+
+/*
+ * 	Notes:
+ * 
+ * 	- Media queries should be edited in both style sections if you require 
+ *	  a different breakpoint for your navigation.
+ *	  
+ *	- Toggle class & menu anchor tags in list items have box-sizing: border-box 
+ *	  style property to allow padding inside the container without conflicting with layout.
+
+/*--------------------------------
+ * Functional Styles (Required)
+ *---------------------------------
+/* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2)
+
+body
+  -webkit-animation: bugfix infinite 1s
+
+@-webkit-keyframes bugfix
+  from, to
+    padding: 0
+
+
+header
+  position: relative
+
+#toggle, .toggle
+  display: none
+
+.menu > li
+  list-style: none
+  float: left
+
+/* Nicolas Gallagher micro clearfix
+
+.clearfix
+  &:before
+    display: table
+    content: ""
+  &:after
+    display: table
+    content: ""
+    clear: both
+
+@media only screen and (max-width: 650px)
+  .menu
+    display: none
+    opacity: 0
+    width: 100%
+    position: absolute
+    right: 0
+    -webkit-transition: opacity 500ms ease-in-out 1s
+    > li
+      display: block
+      width: 100%
+      margin: 0
+      > a
+        display: block
+        width: 100%
+        text-decoration: none
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        border: 1px solid $red - 40
+  .toggle
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $red), color-stop(100%, $red + 15))
+    display: block
+    cursor: pointer
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    user-select: none
+    position: absolute
+    right: 8px
+    top: 3px
+    border: 1px solid $red - 10
+    height: 31px
+    width: 37px
+    border-radius: 2px
+    text-align: center
+  #toggle:checked ~ .menu
+    display: block
+    opacity: 1
+    text-align: center
+    float: left
+    margin: 40px 0 0 0
+    padding: 0
+    li a
+      font-family: $sans_fonts
+      font-weight: 700
+      text-transform: uppercase
+
+/*--------------------------------
+ * Presentation Styles (Editable)
+ *---------------------------------
+
+header.site-head
+  background: #FFFFFF
+
+nav
+  display: block
+  float: right
+  height: 100%
+
+.menu
+  @media all and (min-width: 651px) and (max-width: 780px)
+    height: 100%
+    margin: 0
+    position: relative
+    top: 7px
+  @media all and (min-width: 781px)
+    position: relative
+    top: 5px
+    margin: 0
+
+@media all and (min-width: 651px)
+  .menu
+    > li
+      height: 100%
+      > a
+        height: 100%
+        display: block
+        text-decoration: none
+        border-bottom: none
+        margin-left: 1.5em
+        font-family: $sans_fonts
+        font-size: 0.8em
+        padding: 0px 5px
+        border: 1px solid #fff
+        &:hover, &:focus
+          color: $red - 20
+          font-weight: 500
+          -webkit-transition: all 0.25s ease-in-out
+
+.toggle
+  z-index: 2
+
+@media only screen and (max-width: 650px)
+  .menu
+    z-index: 1000
+    border-top: 1px solid $red + 25
+    height: auto
+    margin-top: 40px
+    > li
+      height: auto
+      > a
+        color: #fff
+        height: auto
+        padding: 15px 15px
+        background: rgba(200, 52, 44, 0.94)
+        &:hover, &:focus
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $red), color-stop(100%, $red - 10))
+          -webkit-transition: background-color .35s ease
+
+  .toggle
+    &:after
+      display: block
+      background: #51C1F1
+      -webkit-border-radius: 2px
+      border-radius: 2px
+      text-align: center
+      font-size: 12px
+      color: #FFFFFF
+      -webkit-transition: all 0.5s linear
+      -moz-transition: all 0.5s linear
+      -o-transition: all 0.5s linear
+      transition: all 0.5s linear
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+    &:hover:after
+      background: #45ABD6
+
+@media only screen and (max-width: 479px)
+  header.site-head > h1
+    text-align: center
+    float: none
+  nav
+    float: none
+  .toggle:after
+    float: none
+    text-align: center
+    width: 100%
 
 // ========================================================= 
 
