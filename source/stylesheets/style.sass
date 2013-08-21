@@ -517,6 +517,28 @@ nav
 
 // ========================================================= 
 
+.article-list
+  h1
+    line-height: 1
+    margin-bottom: 5px
+    a
+      border-bottom: 0
+
+hr
+  width: 100px
+  height: 0
+  margin: 40px auto 80px auto
+  @media only screen and (max-width: 479px)
+    margin: 30px auto 60px auto
+  border: 0
+  &:after
+    content: "\2605\0020\0020\2605\0020\0020\2605"
+    text-align: center
+    color: #ccc
+    font-size: 15px
+  &:last-child
+    &:after
+      display: none
 
 article
   header

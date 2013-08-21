@@ -1,19 +1,8 @@
 = partial 'head'
 
 %body
-  %header{ class: 'site-head clearfix' }
-    .container
-      %h1= link_to 'Speakeasy Linguistics', '/'
-
-      %nav
-        %input{ type: 'checkbox', id: 'toggle' }
-        %label{ for: 'toggle', class: 'toggle onclick' }
-          %img{ src: '/images/nav-bg.svg' }
-        %ul.menu
-          %li= link_to 'About', '/about'
-          %li= link_to 'Contact', '/contact'
-          %li= link_to 'Resources', '/resources'
-
+  = partial 'navigation'
+  
   .container
     %article
       %header

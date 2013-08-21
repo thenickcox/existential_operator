@@ -3,12 +3,16 @@ pageable: true
 per_page: 10
 ---
 - page_articles.each_with_index do |article, i|
-  %h2
-    = link_to article.title, article
-    %span= article.date.strftime('%b %e')
+  %section.article-list
+    %h1
+      = link_to article.title, article
+    %span.date
+      Published on
+      = article.date.strftime('%b %e')
 
-  = article.summary
-  = link_to 'Read more…', article
+    = article.summary
+    = link_to 'Read more…', article
+  %hr
 
 - if paginate && num_pages > 1
   %p

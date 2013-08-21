@@ -1,32 +1,30 @@
-<!doctype html>
-%html
-  %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge;chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:name => 'width=device-width; initial-scale=1.0;'}/
-    %link{:href => '/stylesheets/style.css', :media => 'all', :rel => 'stylesheet', :type => 'text/css'}
-    <script type="text/javascript" src="//use.typekit.net/nus8yti.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7494032/767822/css/fonts.css" />
-  %body
+= partial 'head'
+%body
+  = partial 'layouts/navigation'
+
+  .container
+
     #main{:role => "main"}
       = yield
-    %aside
-      %h2 Recent Articles
-      %ol
-        - blog.articles[0...10].each do |article|
-          %li
-            = link_to article.title, article
-            %span= article.date.strftime('%b %e')
-      %h2 Tags
-      %ol
-        - blog.tags.each do |tag, articles|
-          %li
-            = link_to tag, tag_path(tag)
-            (#{articles.size})
-      %h2 By Year
-      %ol
-        - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-          %li
-            = link_to year, blog_year_path(year)
-            (#{articles.size})
+
+    -#%aside
+      -#%h2 Recent Articles
+      -#%ol
+        -#- blog.articles[0...10].each do |article|
+          -#%li
+            -#= link_to article.title, article
+            -#%span= article.date.strftime('%b %e')
+      -#%h2 Tags
+      -#%ol
+        -#- blog.tags.each do |tag, articles|
+          -#%li
+            -#= link_to tag, tag_path(tag)
+            -#(#{articles.size})
+      -#%h2 By Year
+      -#%ol
+        -#- blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+          -#%li
+            -#= link_to year, blog_year_path(year)
+            -#(#{articles.size})
+
+  = partial 'footer'
