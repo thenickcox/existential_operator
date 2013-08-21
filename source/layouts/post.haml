@@ -1,33 +1,32 @@
-<!doctype html>
-%html
-  %head
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge;chrome=1", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:name => 'width=device-width; initial-scale=1.0;'}/
-    %link{:href => '/stylesheets/style.css', :media => 'all', :rel => 'stylesheet', :type => 'text/css'}
-    <script type="text/javascript" src="//use.typekit.net/nus8yti.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7494032/767822/css/fonts.css" />
-  %body
+= partial 'head'
+
+%body
+  %header{ class: 'site-head' }
+    .container
+      %h1= link_to 'Speakeasy Linguistics', '/'
+
+      %nav.big-nav
+        %ul
+          %li= link_to 'About', ''
+          %li= link_to 'Contact', ''
+          %li= link_to 'Resources', ''
+      %nav.small-nav
+        %ul
+          %li= link_to 'About', ''
+          %li= link_to 'Contact', ''
+          %li= link_to 'Resources', ''
+
+
+  .container
     %article
-      %h1= current_article.title
-      %span= current_article.date.strftime('%b %e')
+      %header
+        %h1= current_article.title
+        %span.date
+          Published on
+          = current_article.date.strftime('%B %d, %Y')
 
       = current_article.body
     
-    %aside
-      #disqus_thread
-      :javascript
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'speakeasylinguistics'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      %a{:href => "http://disqus.com/?ref_noscript"} comments powered by Disqus.
-      %a.dsq-brlink{:href => "http://disqus.com"}
-        comments powered by
-        %span.logo-disqus Disqus
+    = partial 'comments'
+  
+  = partial 'footer'
