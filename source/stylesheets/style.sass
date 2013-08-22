@@ -239,6 +239,7 @@ $lt_gray_hex: #fff7f9
 $lt_gray_rgb: rgb(249, 246, 247)
 $red: #cc3333
 $lt_gray_text: #646464
+$black: #333332
 
 $sans_fonts: 'Whitney SSm A', 'Whitney SSm B', Helvetica, sans-serif
 $serif_fonts: 'ff-tisa-web-pro', Georgia, serif
@@ -255,7 +256,7 @@ body
   line-height: 1.45em
   font-family: $serif_fonts 
   font-weight: 400
-  color: #333332
+  color: $black
   @media all and (min-width: 402px) and (max-width: 768px)
     font-size: 19px
     line-height: 1.5em
@@ -523,7 +524,10 @@ nav
     margin-bottom: 5px
     a
       border-bottom: 0
-
+      color: $black
+      -webkit-transition: all .15s ease-in
+      &:hover
+        color: $red
 hr
   width: 100px
   height: 0
