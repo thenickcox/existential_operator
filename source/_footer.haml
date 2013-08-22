@@ -10,8 +10,19 @@
     
     %p
       You can also get in touch via
-      = link_to 'email', ''
+      = link_to 'email', 'mailto:nick@speakeasylinguistics.com'
       but whatever you do, you should definitely
       = succeed '.' do
         = link_to 'follow me on Twitter', ''
+
+  %p.copyright
+    &copy;
+    - if Time.now.year > 2013
+      "2013–#{Time.now.year}"
+    - else
+      2013
+      
+
+    Speakeasy Linguistics.
+    = link_to 'Contact', 'mailto:nick@speakeasylinguistics.com'
 
