@@ -2,7 +2,7 @@
 
 %body
   = partial 'navigation'
-  
+
   .container
     %article
       %header
@@ -12,7 +12,7 @@
           = current_article.date.strftime('%B %d, %Y')
 
       = current_article.body
-    
+
     = partial 'comments'
-  
+
   = partial 'footer'
