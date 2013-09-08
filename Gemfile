@@ -2,7 +2,7 @@ source :rubygems
 
 gem "middleman", "~> 3.0.13"
 gem "middleman-blog", "~> 3.2.0"
-gem "middleman-s3_sync", :github => "fredjean/middleman-s3_sync"
+gem "middleman-s3_sync", :git => 'git@github.com:fredjean/middleman-s3_sync.git'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0.0"

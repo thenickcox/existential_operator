@@ -1,16 +1,4 @@
 GIT
-  remote: git://github.com/fredjean/middleman-s3_sync.git
-  revision: ede405ec359e283102a62591fa978d402fadcf29
-  specs:
-    middleman-s3_sync (3.0.15)
-      colorize
-      fog
-      map
-      middleman-core (>= 3.0.0)
-      pmap
-      ruby-progressbar
-
-GIT
   remote: git://github.com/middleman/middleman-livereload.git
   revision: 1cce9bd029f8316ee0f64b41b8fe6d096eaf1a89
   specs:
@@ -19,6 +7,18 @@ GIT
       middleman-core (>= 3.0.2)
       multi_json (~> 1.0)
       rack-livereload
+
+GIT
+  remote: git@github.com:fredjean/middleman-s3_sync.git
+  revision: a7a07704fc416c0aff288c9e0bf1b0820561a3ba
+  specs:
+    middleman-s3_sync (3.0.16)
+      colorize
+      fog
+      map
+      middleman-core (>= 3.0.0)
+      pmap
+      ruby-progressbar
 
 GEM
   remote: http://rubygems.org/
