@@ -1,8 +1,8 @@
-// ========================================================= 
+// =========================================================
 
 // @Normalize
 
-// ========================================================= 
+// =========================================================
 
 /**! normalize.css v2.1.1 | MIT License | git.io/normalize
 
@@ -229,32 +229,37 @@ table
   border-collapse: collapse
   border-spacing: 0
 
-// ========================================================= 
+// =========================================================
 
 // @Variables
 
-// ========================================================= 
+// =========================================================
 
-$lt_gray_hex: #fff7f9
-$lt_gray_rgb: rgb(249, 246, 247)
-$red: #cc3333
-$lt_gray_text: #646464
-$black: #333332
+$lt_gray_hex: #f7fafb
+$lt_gray_rgb: rgb(250, 254, 253)
+$blue: rgb(0, 200, 204)
+$lt_gray_text: #9EABB3
+$black: #343434
 
-$sans_fonts: 'Whitney SSm A', 'Whitney SSm B', Helvetica, sans-serif
-$serif_fonts: 'ff-tisa-web-pro', Georgia, serif
+$sans: 'Whitney SSm A', 'Whitney SSm B', Helvetica, sans-serif
 
-// ========================================================= 
+// =========================================================
 
 // @Global
 
-// ========================================================= 
+// =========================================================
 
+html
+  font-size: 62.5%
+  height: 100%
+  max-height: 100%
 
 body
-  font-size: 21px
+  height: 100%
+  max-height: 100%
+  font-size: 1.9rem
   line-height: 1.55em
-  font-family: $serif_fonts 
+  font-family: $sans
   font-weight: 400
   color: $black
   @media all and (min-width: 402px) and (max-width: 768px)
@@ -266,37 +271,37 @@ body
     line-height: 1.5em
 
 h1, h2, h3, h4, h5
-  font-family: $sans_fonts
+  font-family: $sans
   font-weight: 700
   font-style: normal
 
 a:link, a:visited
-  color: #cc3333
+  color: $blue
   text-decoration: none
-  border-bottom: 1px solid #ccc
 
 a:hover
-  border-bottom: 1px solid $red
-  color: $red - 30
+  border-bottom: 1px solid $blue - 20
+  color: $blue - 20
 
 .site-head
-  display: inline-block
   width: 100%
-  border-bottom: 1px solid #efefef
-  box-shadow: 0 2px 12px #dfdfdf
   h1
+    font-weight: 400
     margin: 0
     padding: 0.5em 0
     font-size: 15px
-    color: $red
-    float: left
+    text-align: center
+    width: 100%
+    margin: 5em 0
     a, a:link
+      color: $black
       border-bottom: none
+      font-size: 1em
 
 .container
   margin: 20px
-  width: 60%
-  max-width: 700px
+  width: 80%
+  max-width: 800px
   margin: 0 auto
   @media all and (max-width: 1050px) and (min-width: 850px)
     width: 70%
@@ -308,15 +313,15 @@ a:hover
     width: 94%
 
 .date
-  font-style: italic
   color: $lt_gray_text
+  font-size: 0.8em
 
 img
   max-width: 100%
 
 footer
   width: 100%
-  border-top: 1px solid #aaa
+  border-top: 1px solid $lt_gray_hex - 5
   margin-top: 2em
   padding: 2em 0
   background: $lt_gray_hex
@@ -328,216 +333,23 @@ footer
   font-size: 0.8em
   margin: 1.5em 0
 
-// ========================================================= 
-
-// @Navigation
-
-// ========================================================= 
-
-/*
- * Navigataur: A pure CSS responsive navigation menu
- * Author: Mike King (@micjamking)
-
-/*
- * 	Notes:
- * 
- * 	- Media queries should be edited in both style sections if you require 
- *	  a different breakpoint for your navigation.
- *	  
- *	- Toggle class & menu anchor tags in list items have box-sizing: border-box 
- *	  style property to allow padding inside the container without conflicting with layout.
-
-/*--------------------------------
- * Functional Styles (Required)
- *---------------------------------
-/* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2)
-
-body
-  -webkit-animation: bugfix infinite 1s
-
-@-webkit-keyframes bugfix
-  from, to
-    padding: 0
-
-
-header
-  position: relative
-
-#toggle, .toggle
-  display: none
-
-.menu > li
-  list-style: none
-  float: left
-
-/* Nicolas Gallagher micro clearfix
-
-.clearfix
-  &:before
-    display: table
-    content: ""
-  &:after
-    display: table
-    content: ""
-    clear: both
-
-@media only screen and (max-width: 650px)
-  .menu
-    display: none
-    opacity: 0
-    width: 100%
-    position: absolute
-    right: 0
-    -webkit-transition: opacity 500ms ease-in-out 1s
-    > li
-      display: block
-      width: 100%
-      margin: 0
-      > a
-        display: block
-        width: 100%
-        text-decoration: none
-        -webkit-box-sizing: border-box
-        -moz-box-sizing: border-box
-        box-sizing: border-box
-        border: 1px solid $red - 40
-  .toggle
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $red), color-stop(100%, $red + 15))
-    display: block
-    cursor: pointer
-    -webkit-touch-callout: none
-    -webkit-user-select: none
-    user-select: none
-    position: absolute
-    right: 8px
-    top: 3px
-    border: 1px solid $red - 10
-    height: 31px
-    width: 37px
-    border-radius: 2px
-    text-align: center
-  #toggle:checked ~ .menu
-    display: block
-    opacity: 1
-    text-align: center
-    float: left
-    margin: 40px 0 0 0
-    padding: 0
-    li a
-      font-family: $sans_fonts
-      font-weight: 700
-      text-transform: uppercase
-
-/*--------------------------------
- * Presentation Styles (Editable)
- *---------------------------------
-
-header.site-head
-  background: #FFFFFF
-  height: 45px
-
-nav
-  display: block
-  float: right
-  height: 100%
-
-.menu
-  @media all and (min-width: 651px) and (max-width: 780px)
-    height: 100%
-    margin: 0
-    position: relative
-    top: 7px
-  @media all and (min-width: 781px)
-    position: relative
-    top: 5px
-    margin: 0
-
-@media all and (min-width: 651px)
-  .menu
-    > li
-      height: 100%
-      > a
-        height: 100%
-        display: block
-        text-decoration: none
-        border-bottom: none
-        margin-left: 1.5em
-        font-family: $sans_fonts
-        font-size: 0.8em
-        padding: 0px 5px
-        border: 1px solid #fff
-        &:hover, &:focus
-          color: $red - 20
-          padding: 0 4px
-          font-weight: 500
-          -webkit-transition: font-weight 0.25s ease-in-out
-
-.toggle
-  z-index: 2
-
-@media only screen and (max-width: 650px)
-  .menu
-    z-index: 1000
-    border-top: 1px solid $red + 25
-    height: auto
-    margin-top: 40px
-    > li
-      height: auto
-      > a
-        color: #fff
-        height: auto
-        padding: 15px 15px
-        background: rgba(200, 52, 44, 0.94)
-        &:hover, &:focus
-          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $red), color-stop(100%, $red - 10))
-          -webkit-transition: background-color .35s ease
-
-  .toggle
-    &:after
-      display: block
-      background: #51C1F1
-      -webkit-border-radius: 2px
-      border-radius: 2px
-      text-align: center
-      font-size: 12px
-      color: #FFFFFF
-      -webkit-transition: all 0.5s linear
-      -moz-transition: all 0.5s linear
-      -o-transition: all 0.5s linear
-      transition: all 0.5s linear
-      -webkit-box-sizing: border-box
-      -moz-box-sizing: border-box
-      box-sizing: border-box
-    &:hover:after
-      background: #45ABD6
-
-@media only screen and (max-width: 479px)
-  header.site-head > h1
-    text-align: center
-    float: none
-  nav
-    float: none
-  .toggle:after
-    float: none
-    text-align: center
-    width: 100%
-
-// ========================================================= 
+// =========================================================
 
 // @Article
 
-// ========================================================= 
+// =========================================================
 
 .article-list
   h1
     line-height: 1
     margin-bottom: 5px
+    margin-top: 0
     a
       border-bottom: 0
       color: $black
       -webkit-transition: all .15s ease-in
       &:hover
-        color: $red
+        color: $blue
 hr
   width: 100px
   height: 0
@@ -561,6 +373,8 @@ article
   h1
     line-height: 1
     margin-bottom: 5px
+    margin-top: 0
+    font-size: 5rem
 
   h2
     margin: 1.85em 0 0.65em
@@ -578,11 +392,9 @@ article
     margin-bottom: 21px
 
   p
-    margin: 0
+    margin: 0 0 1.6em 0
     line-height: 1.6em
 
-  p + p
-    text-indent: 1.5em
 
 small
   font-size: 80%
@@ -592,6 +404,9 @@ small
   background: #f2f2f2
   margin-top: 2em
 
+small
+  a, a:link
+    color: $lt_gray_text + 20
 
 // ========================================================= 
 

@@ -6,10 +6,9 @@
   .container
     %article
       %header
-        %h1= current_article.title
         %span.date
-          Published on
           = current_article.date.strftime('%B %d, %Y')
+        %h1= current_article.title
 
       = current_article.body
 
