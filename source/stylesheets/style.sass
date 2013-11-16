@@ -231,17 +231,34 @@ table
 
 // =========================================================
 
-// @Variables
+// @Variables & mixins
 
 // =========================================================
 
 $lt_gray_hex: #f7fafb
 $lt_gray_rgb: rgb(250, 254, 253)
-$blue: rgb(0, 200, 204)
+$primary_color: rgb(0, 200, 204)
 $lt_gray_text: #9EABB3
-$black: #343434
+/*$primary_color: #209E82
+$primary_color: #1E967B
+$primary_color_bright: #2DE3BA
+$black: #323232
 
-$sans: 'Whitney SSm A', 'Whitney SSm B', Helvetica, sans-serif
+$sans: 'Gotham SSm A', 'Gotham SSm B'
+$display: 'Tungsten Cond A', 'Tungsten Cond B'
+
+@mixin h1-heading
+  line-height: 0.8
+  margin-bottom: 0.5em
+  margin-top: 0
+  font-size: 10rem
+  text-transform: uppercase
+  letter-spacing: 0.015em
+
+@mixin text-graph
+  margin: 0 0 1.6em 0
+  line-height: 1.6em
+  letter-spacing: -0.01em
 
 // =========================================================
 
@@ -260,8 +277,9 @@ body
   font-size: 1.9rem
   line-height: 1.55em
   font-family: $sans
-  font-weight: 400
+  font-weight: 300
   color: $black
+  -webkit-font-smoothing: antialiased
   @media all and (min-width: 402px) and (max-width: 768px)
     font-size: 19px
     line-height: 1.5em
@@ -271,32 +289,54 @@ body
     line-height: 1.5em
 
 h1, h2, h3, h4, h5
-  font-family: $sans
-  font-weight: 700
+  font-family: $display
+  font-weight: 600
   font-style: normal
 
 a:link, a:visited
-  color: $blue
+  color: $primary_color
   text-decoration: none
-
+  -webkit-transition: color 0.15s ease-in, border-bottom 0.15s ease-in
 a:hover
-  border-bottom: 1px solid $blue - 20
-  color: $blue - 20
+  border-bottom: 1px solid $primary_color_bright
+  color: $primary_color_bright
+
+.color-band
+  height: 5px
+  width: 100%
+  background: $primary_color
+  -webkit-transition: background 0.15s ease-in-out
 
 .site-head
+  width: 80%
+  margin: 5em auto
+  max-width: 800px
+  &:hover
+    span.h1-top
+      background: $primary_color_bright
+
+.h1-top
+  height: 3px
+  background: $primary_color
+  display: block
+  width: 40px
+  margin: 20px 0
+
+.site-logo
+  font-weight: 400
+  margin: 0
+  padding: 0
+  text-align: left
   width: 100%
-  h1
-    font-weight: 400
-    margin: 0
-    padding: 0.5em 0
-    font-size: 15px
-    text-align: center
-    width: 100%
-    margin: 5em 0
-    a, a:link
-      color: $black
-      border-bottom: none
-      font-size: 1em
+  letter-spacing: 0.01em
+  -webkit-transition: color 0.15s ease-in-out
+  a:hover
+    color: $primary_color_bright
+    border-bottom: none
+
+.tagline.subhead
+  margin: 0
+  letter-spacing: 0.01em
 
 .container
   margin: 20px
@@ -326,6 +366,8 @@ footer
   padding: 2em 0
   background: $lt_gray_hex
   background: $lt_gray_rgb
+  p, p a
+    +text-graph
 
 .copyright
   text-align: center
@@ -339,17 +381,17 @@ footer
 
 // =========================================================
 
+
 .article-list
   h1
-    line-height: 1
-    margin-bottom: 5px
-    margin-top: 0
+    +h1-heading
     a
       border-bottom: 0
-      color: $black
+      color: $primary_color
       -webkit-transition: all .15s ease-in
       &:hover
-        color: $blue
+        color: saturate($primary_color, 35%)
+
 hr
   width: 100px
   height: 0
@@ -371,13 +413,13 @@ article
     margin-bottom: 1em
 
   h1
-    line-height: 1
-    margin-bottom: 5px
-    margin-top: 0
-    font-size: 5rem
+    +h1-heading
 
   h2
-    margin: 1.85em 0 0.65em
+    margin: 1.2em 0 0.65em
+    font-family: 'Tungsten Cond A', 'Tungsten Cond B'
+    font-size: 6rem
+    letter-spacing: 0.01em
 
   img
     border: 1px solid #bababa
@@ -392,8 +434,7 @@ article
     margin-bottom: 21px
 
   p
-    margin: 0 0 1.6em 0
-    line-height: 1.6em
+    +text-graph
 
 
 small
@@ -410,18 +451,68 @@ small
 
 // ========================================================= 
 
-// @Pages
+// @Code
 
 // ========================================================= 
 
-.learn
-  font-size: 5.5em
-  margin: 0.5em 0 0.35em 0
+/*
+ *
+ *github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
-.resources-container article h1
-  font-size: 1.3em
-  margin-top: 1.5em
+pre
+  code
+    display: block
+    padding: 0.5em
+    color: #333
+    background: ghostwhite
+  .comment, .template_comment, .diff .header, .javadoc
+    color: #998
+    font-style: italic
+  .keyword, .css .rule .keyword, .winutils, .javascript .title, .nginx .title, .subst, .request, .status
+    color: #333
+    font-weight: bold
+  .number, .hexcolor, .ruby .constant
+    color: #099
+  .string, .tag .value, .phpdoc, .tex .formula
+    color: #dd1144
+  .title, .id, .coffeescript .params, .scss .preprocessor
+    color: #900
+    font-weight: bold
+  .javascript .title, .lisp .title, .clojure .title, .subst
+    font-weight: normal
+  .class .title, .haskell .type, .vhdl .literal, .tex .command
+    color: #458
+    font-weight: bold
+  .tag
+    color: #000080
+    font-weight: normal
+    .title
+      color: #000080
+      font-weight: normal
+  .rules .property, .django .tag .keyword
+    color: #000080
+    font-weight: normal
+  .attribute, .variable, .lisp .body
+    color: teal
+  .regexp
+    color: #009926
+  .class
+    color: #458
+    font-weight: bold
+  .symbol, .ruby .symbol .string, .lisp .keyword, .tex .special, .prompt
+    color: #990073
+  .built_in, .lisp .title, .clojure .built_in
+    color: #0086b3
+  .preprocessor, .pi, .doctype, .shebang, .cdata
+    color: #999
+    font-weight: bold
+  .deletion
+    background: #ffdddd
+  .addition
+    background: #ddffdd
+  .diff .change
+    background: #0086b3
+  .chunk
+    color: #aaaaaa
 
-.resource-headline
-  margin-top: 1.5em
 
