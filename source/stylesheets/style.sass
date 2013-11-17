@@ -97,8 +97,8 @@ code, kbd, pre, samp
   font-size: 1em
 
 // Improve readability of pre-formatted text in all browsers.
-pre
-  white-space: pre-wrap
+code
+  overflow-x: auto
 
 // Set consistent quote types.
 q
@@ -449,6 +449,13 @@ small
   a, a:link
     color: $lt_gray_text + 20
 
+blockquote
+  border-left: 5px solid $primary_color
+  font-style: italic
+  color: #646464
+  padding-left: 1em
+  margin-left: 0
+
 // ========================================================= 
 
 // @Code
@@ -518,3 +525,5 @@ pre
 p code
   background: #f8f8ff
   padding: 1px 3px
+
+
