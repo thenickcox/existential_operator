@@ -421,10 +421,15 @@ article
 
   h2
     margin: 1.2em 0 0.65em
-    font-family: 'Tungsten Cond A', 'Tungsten Cond B'
+    font-family: $display
     font-size: 6rem
     letter-spacing: 0.01em
     line-height: 0.8
+
+  h3
+    font-family: $sans
+    font-size: 1.2em
+    font-weight: 700
 
   img
     border: 1px solid #bababa
@@ -440,7 +445,6 @@ article
 
   p
     +text-graph
-
 
 small
   font-size: 80%
@@ -477,6 +481,7 @@ pre
     padding: 0.5em
     color: #333
     background: #f8f8ff
+    border: 1px solid #f8f8ff - 20
   .comment, .template_comment, .diff .header, .javadoc
     color: #998
     font-style: italic
