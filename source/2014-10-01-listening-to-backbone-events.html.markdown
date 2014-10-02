@@ -65,7 +65,7 @@ This only works as expected when we pass `listenTo` an instance of a model. This
     App.movieList = new App.Views.MoviesView();
 
     // Create a new movie
-    var movie = new App.Models.Movie({ title: 'Edward Scissorhands', year: 1987 });
+    var movie = new App.Models.Movie({ title: 'Edward Scissorhands', year: 1990 });
 
     App.movieLibrary.add(movie)
     // Uncaught TypeError: undefined is not a function
