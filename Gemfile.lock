@@ -21,7 +21,7 @@ GIT
       ruby-progressbar
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activesupport (3.2.13)
       i18n (= 0.6.1)
@@ -160,7 +160,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  builder (~> 3.0.0)
   middleman (~> 3.0.13)
   middleman-blog (~> 3.2.0)
   middleman-disqus
