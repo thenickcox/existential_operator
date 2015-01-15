@@ -5,7 +5,7 @@ tags: backbone, rails
 layout: post
 ---
 
-This is part two of a two-part tutorial. If you haven’t already, get up to speed on [part one](/2014/12/21/adding-backbone-js-to-an-existing-rails-app.html). In the last part, we took a look at getting a Rails app set up with Backbone.js, and introduced some of the modular concepts behind Backbone: models, collections, and views. In this part, we’ll dig in further to templating, as well ashandling user input with Backbone’s `Event` module. Finally, we’ll refactor our app and improve the user experience.
+This is part two of a two-part tutorial. If you haven’t already, get up to speed on [part one](/2014/12/21/adding-backbone-js-to-an-existing-rails-app). In the last part, we took a look at getting a Rails app set up with Backbone.js, and introduced some of the modular concepts behind Backbone: models, collections, and views. In this part, we’ll dig in further to templating, as well ashandling user input with Backbone’s `Event` module. Finally, we’ll refactor our app and improve the user experience.
 
 Let’s get started.
 

@@ -291,4 +291,4 @@ Now when we refresh, we should see the same featured album, but when we go to `h
 
 In this first part of the Backbone tutorial, we looked at getting Rails set up with Backbone.js and its dependencies and introduced some of Backbone’s modules. We got up and running with a Rails back end providing an API for our front end to consume.
 
-Now onto the exiting stuff! If you’ve made it this far, have a go at [part two of the tutorial](/2015/01/13/adding-backbone-js-to-an-existing-rails-app-part-2.html), where we’ll talk about hamljs templates, handling user interaction, more object oriented programming concepts, and refactoring.
+Now onto the exiting stuff! If you’ve made it this far, have a go at [part two of the tutorial](/2015/01/13/adding-backbone-js-to-an-existing-rails-app-part-2), where we’ll talk about hamljs templates, handling user interaction, more object oriented programming concepts, and refactoring.
