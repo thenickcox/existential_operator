@@ -1,0 +1,17 @@
+#!/usr/bin/env/ruby
+require 'date'
+
+def execute
+  begin
+    puts "running `middleman build`..."
+    `bundle exec middleman build`
+    puts "Syncing to s3..."
+    `bundle exec middleman s3_sync`
+    puts "Committing changes and pushing to GitHub..."
+    `git add -A`
+    `git commit -m "Build blog #{Date.today.strftime("%m/%-d/%Y")}"`
+    `git push origin master`
+  rescue
+    puts "Couldn't build blog"
+  end
+end
