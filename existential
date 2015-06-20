@@ -1,4 +1,4 @@
-#!/usr/bin/env/ruby
+#!/usr/bin/env ruby
 require 'date'
 
 def execute
@@ -15,3 +15,5 @@ def execute
     puts "Couldn't build blog"
   end
 end
+
+execute
